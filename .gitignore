@@ -1,0 +1,47 @@
+# Gradle
+.gradle
+**/build
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+##
+## ui
+##
+
+# compiled output
+ui/dist
+ui/tmp
+
+# dependencies
+ui/node_modules
+
+# misc
+ui/.sass-cache
+ui/connect.lock
+ui/coverage/*
+ui/libpeerconnection.log
+ui/npm-debug.log
+ui/testem.log
+ui/typings
+
+# e2e
+ui/e2e/*.js
+ui/e2e/*.map
