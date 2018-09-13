@@ -1,0 +1,5 @@
+rootProject.name = 'reference'
+
+include ':back'
+include ':front'
+
