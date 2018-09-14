@@ -27,6 +27,13 @@ repositories {
 }
 
 
+compileJava {
+	options.incremental = true
+	options.failOnError = true
+}
+
+
+
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
@@ -34,17 +41,19 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-validation')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-web-services')
-	runtime('org.springframework.boot:spring-boot-devtools')
-	compileOnly('org.projectlombok:lombok')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile(
-	'junit:junit:4.12',
-	'org.codehaus.groovy:groovy-all:2.4.4',
-	'org.spockframework:spock-core:1.0-groovy-2.4',
-	'org.spockframework:spock-spring:1.0-groovy-2.4'
-	)
-//	testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
-//	testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
-	compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
-	compile 'org.codehaus.groovy:groovy-backports-compat23:2.3.7'
+	compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1')
+	compile ('org.codehaus.groovy:groovy-backports-compat23:2.3.7')
+
+    testCompile('junit:junit:4.12')
+    testCompile('org.codehaus.groovy:groovy-all:2.4.4')
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
+    testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+
+
+    compileOnly('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
 }

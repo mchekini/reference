@@ -18,26 +18,6 @@ import org.apache.http.client.HttpResponseException
  */
 class TestUtil {
 
-    /**
-     * Improved REST client which is more explicit when bad requests are made.
-     * @param port the local port.
-     */
-    static RESTClient newRestClient(int port) {
-        RESTClient client = new RESTClient("http://localhost:$port")
-        client.headers['REMOTE-USER'] = 'uid=karine.epely,uid=17X100A100A0001A,ou=Users,o=rte'
-        client.handler.failure = { HttpResponseDecorator resp ->
-            int status = resp.status
-            def headers = resp.headers.inject('') { all, h ->
-                all + "${h.name} : ${h.value}\n"
-            }.trim()
-            def message = """
-HTTP call failed.
-Status code : $status
-$headers
-${resp.entity.content.text}"""
-            throw new HttpResponseException(status, message)
-        }
-        client
-    }
+
 
 }

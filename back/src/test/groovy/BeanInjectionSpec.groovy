@@ -13,7 +13,7 @@ class BeanInjectionSpec extends Specification {
     BackApplication app
 
     void setup() {
-        println 'init in progress'
+        println 'setup'
     }
 
     def 'it should run the app'() {
