@@ -6,11 +6,6 @@
  */
 
 
-
-import groovyx.net.http.HttpResponseDecorator
-import groovyx.net.http.RESTClient
-import org.apache.http.client.HttpResponseException
-
 /**
  * Some useful helper methods for testing.
  *

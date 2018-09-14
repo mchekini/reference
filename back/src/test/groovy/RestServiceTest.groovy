@@ -1,4 +1,3 @@
-import com.example.demo.BackApplication
 import com.example.demo.BasicController
 import groovyx.net.http.HttpResponseDecorator
 import groovyx.net.http.RESTClient
@@ -13,19 +12,14 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
  * @Author mahdchek.
  */
 
-
-
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @ContextConfiguration(classes = [BasicController.class])
-class RestServiceTest  extends Specification {
+class RestServiceTest extends Specification {
 
     @LocalServerPort
     int port
 
-
     RESTClient client
-
-
 
     void setup() {
         println 'the selected port  = ' + port
@@ -37,10 +31,12 @@ class RestServiceTest  extends Specification {
         }
     }
 
-    def 'it should '(){
-        when: ('summing two numbers')
-        HttpResponseDecorator result = client.get(path : '/test-app')
-        then: ('expect result')
+    def 'it should '() {
+        when:
+        ('summing two numbers')
+        HttpResponseDecorator result = client.get(path: '/test-app')
+        then:
+        ('expect result')
         result.status == 200
     }
 }
