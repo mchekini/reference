@@ -43,4 +43,8 @@ dependencies {
 	'org.spockframework:spock-core:1.0-groovy-2.4',
 	'org.spockframework:spock-spring:1.0-groovy-2.4'
 	)
+//	testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+//	testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+	compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+	compile 'org.codehaus.groovy:groovy-backports-compat23:2.3.7'
 }
