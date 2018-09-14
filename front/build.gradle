@@ -1,8 +1,11 @@
 group 'com.mehdi'
 version '1.0-SNAPSHOT'
 
+ext {
+    distDir = file("$projectDir/dist")
+}
 
-task clean(type: Delete){
-    delete "${projectDir}/dist/*"
 
+task clean{
+    delete distDir
 }
