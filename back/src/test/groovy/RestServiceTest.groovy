@@ -1,4 +1,4 @@
-import com.example.demo.BasicController
+import com.example.demo.BackApplication
 import groovyx.net.http.HttpResponseDecorator
 import groovyx.net.http.RESTClient
 import org.springframework.boot.test.context.SpringBootTest
@@ -13,7 +13,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
  */
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@ContextConfiguration(classes = [BasicController.class])
+@ContextConfiguration(classes = [BackApplication.class])
 class RestServiceTest extends Specification {
 
     @LocalServerPort
