@@ -15,6 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'groovy'
+apply plugin: 'jacoco'
 
 
 group = 'com.example'
@@ -26,14 +27,6 @@ repositories {
 	mavenCentral()
 }
 
-
-compileJava {
-	options.incremental = true
-	options.failOnError = true
-}
-
-
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
@@ -44,16 +37,35 @@ dependencies {
 	compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1')
 	compile ('org.codehaus.groovy:groovy-backports-compat23:2.3.7')
 
-    testCompile('junit:junit:4.12')
-    testCompile('org.codehaus.groovy:groovy-all:2.4.4')
-    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
-    testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
+	testCompile('junit:junit:4.12')
+	testCompile('org.codehaus.groovy:groovy-all:2.4.4')
+	testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
+	testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
 
-    runtime('org.springframework.boot:spring-boot-devtools')
+	runtime('org.springframework.boot:spring-boot-devtools')
 
 
-    compileOnly('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+	compileOnly('org.projectlombok:lombok:1.16.16')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
 
 
 }
+
+compileJava {
+	options.incremental = true
+	options.failOnError = false
+}
+
+def jacocoDir = file("$buildDir/jacoco")
+
+
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination file("${buildDir}/jacocoHtml")
+	}
+}
+
+
+
