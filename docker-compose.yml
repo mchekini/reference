@@ -1,0 +1,24 @@
+version: '2'
+services:
+  back:
+    build:
+      context: back
+      dockerfile: Dockerfile
+    image: back
+    container_name: back
+    ports:
+      - "9200:9200"
+#    volumes:
+##      - ${APPLIS_HOME}/fopo/logs:/var/log/fopo
+#    environment:
+##      - SPRING_PROFILES_ACTIVE=local
+  front:
+    build:
+      context: front
+      dockerfile: Dockerfile
+    container_name: front
+    image: front
+    ports:
+      - "80:5080"
+#    volumes:
+##      - ${APPLIS_HOME}/ui/logs:/var/log/httpd
