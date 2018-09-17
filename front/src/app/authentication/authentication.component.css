@@ -1,0 +1,28 @@
+::ng-deep .body{
+    background-image: linear-gradient( gray, white);
+    background-repeat: no-repeat;
+    height: 1287px;
+}
+
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+#connexion_btn{
+    position: relative;
+    left: 40%;
+}
+
+
+
