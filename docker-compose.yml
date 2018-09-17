@@ -19,6 +19,31 @@ services:
     container_name: front
     image: front
     ports:
-      - "80:5080"
+      - "80:80"
 #    volumes:
 ##      - ${APPLIS_HOME}/ui/logs:/var/log/httpd
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=test
+
+  cassandra-cluster-01:
+    container_name: cassandra-cluster-01
+    image: cassandra
+    ports:
+     - "9042:9042"
+    environment:
+     - CASSANDRA_CLUSTER_NAME=Formation
+
+  cassandra-cluster-02:
+    container_name: cassandra-cluster-02
+    image: cassandra
+    command: /bin/bash -c "sleep 20 && echo ' -- Pausing to let system catch up ... -->' && /docker-entrypoint.sh cassandra -f"
+    links:
+      - cassandra-cluster-01:seed
+    environment:
+      - CASSANDRA_SEEDS=seed
+      - CASSANDRA_CLUSTER_NAME=Formation
