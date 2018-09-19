@@ -1,0 +1,11 @@
+{
+  "/isuservalid/*":{
+    "target":"http://localhost:9201",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/isuservalid": "isuservalid"
+    }
+  }
+}

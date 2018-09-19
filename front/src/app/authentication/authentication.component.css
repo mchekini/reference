@@ -1,10 +1,3 @@
-::ng-deep .body{
-    background-image: linear-gradient( gray, white);
-    background-repeat: no-repeat;
-    height: 1287px;
-}
-
-
 #login .container #login-row #login-column #login-box {
     margin-top: 120px;
     max-width: 600px;
@@ -22,6 +15,13 @@
 #connexion_btn{
     position: relative;
     left: 40%;
+}
+
+
+.errorMessage{
+    color: red;
+    position: relative;
+    left:14%;
 }
 
 
