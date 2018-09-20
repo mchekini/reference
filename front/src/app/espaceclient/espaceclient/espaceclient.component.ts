@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Movie} from '../../models/movie';
 
 @Component({
   selector: 'app-espaceclient',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./espaceclient.component.css']
 })
 export class EspaceclientComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    throw new Error("Method not implemented.");
   }
+
 
 }
