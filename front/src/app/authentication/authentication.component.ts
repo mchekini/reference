@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {RequestOptions} from "@angular/http";
 
 @Component({
   selector: 'app-authentication',
@@ -21,7 +22,12 @@ export class AuthenticationComponent implements OnInit {
 
   login(): void {
    if (this.myForm.valid) {
-     this.http.get('http://localhost:9201/isuservalid/check?login=test&password=test').subscribe(data => {
+     // let params = new HttpParams();
+     // params.set('login', this.myForm.get('login').value);
+     // params.set('password', this.myForm.get('password').value);
+     // const requestOptions = new RequestOptions();
+     // requestOptions.params = params;
+     this.http.get('http://localhost:9201/isuservalid/check').subscribe(data => {
        console.log(data);
       console.log('authent réussie');
      })

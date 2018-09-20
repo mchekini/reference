@@ -28,13 +28,11 @@ public class AuthenticationResource {
     @GetMapping("/isuservalid/check")
     public Response isUserAuthenticated(final String login, final String password) throws NoSuchAlgorithmException {
 
-        return Response.status(OK).build();
+        final String hashPassword = Security.hashMD5(password);
 
-//        final String hashPassword = Security.hashMD5(password);
-//
-//        if (userRepository.findById(login).get().getPassword().equals(hashPassword)) {
-//            return Response.status(OK).build();
-//        }
-//        return Response.status(UNAUTHORIZED).build();
+        if (userRepository.findById(login).get().getPassword().equals(hashPassword)) {
+            return Response.status(OK).build();
+        }
+        return Response.status(UNAUTHORIZED).build();
     }
 }

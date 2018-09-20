@@ -19,7 +19,7 @@ services:
     container_name: front
     image: front
     ports:
-      - "80:80"
+      - "80:5080"
 #    volumes:
 ##      - ${APPLIS_HOME}/ui/logs:/var/log/httpd
   postgres:

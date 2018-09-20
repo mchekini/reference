@@ -1,0 +1,17 @@
+
+----------------create keyspace ----------------------------
+
+CREATE KEYSPACE IF NOT EXISTS football
+   WITH REPLICATION = {
+      'class' : 'SimpleStrategy', 'replication_factor' : 3
+     }
+   AND DURABLE_WRITES =  true ;
+
+-----------------create table ------------------------------
+
+ CREATE TABLE movie (
+ id uuid,
+ link text,
+ author text,
+ PRIMARY KEY (link, author)
+ ) WITH CLUSTERING ORDER BY (author ASC);
