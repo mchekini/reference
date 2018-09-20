@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {RequestOptions} from "@angular/http";
+import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-authentication',
@@ -10,7 +10,7 @@ import {RequestOptions} from "@angular/http";
 })
 export class AuthenticationComponent implements OnInit {
   public myForm: FormGroup;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.myForm = new FormGroup({
       login: new FormControl('', this.loginValidator),
       password: new FormControl('')
@@ -22,14 +22,13 @@ export class AuthenticationComponent implements OnInit {
 
   login(): void {
    if (this.myForm.valid) {
-     // let params = new HttpParams();
-     // params.set('login', this.myForm.get('login').value);
-     // params.set('password', this.myForm.get('password').value);
-     // const requestOptions = new RequestOptions();
-     // requestOptions.params = params;
-     this.http.get('http://localhost:9201/isuservalid/check').subscribe(data => {
-       console.log(data);
-      console.log('authent réussie');
+     const login = this.myForm.get('login').value;
+     const password = this.myForm.get('password').value;
+     this.http.get('http://localhost:9201/isuservalid/check?login=' + login + '&password=' + password).subscribe((response) => {
+       this.router.navigateByUrl('espaceclient');
+     },
+       (error) => {
+       console.log(error.status);
      })
    }
   }

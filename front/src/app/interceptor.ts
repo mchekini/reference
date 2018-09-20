@@ -16,18 +16,7 @@ export class HeaderInterceptor implements HttpInterceptor {
       setHeaders: {}
     });
 
-    return next.handle(request)
-      .pipe(
-        tap(event => {
-          if (event instanceof HttpResponse) {
-            console.log(event.status);
-          }
-        }, error => {
-          console.error(error);
-          console.error(error.message);
-
-        })
-      );
+    return next.handle(request);
   }
 
 }

@@ -5,19 +5,21 @@ import {AppComponent} from './app.component';
 import {AuthenticationComponent} from './authentication/authentication.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HeaderInterceptor} from './interceptor';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { EspaceclientComponent } from './espaceclient/espaceclient/espaceclient.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: AuthenticationComponent},
-  {path: 'test', component: AuthenticationComponent}
+  {path: 'espaceclient', component: EspaceclientComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    EspaceclientComponent
   ],
   imports: [
     BrowserModule,

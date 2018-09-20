@@ -33,6 +33,6 @@ public class AuthenticationResource {
         if (userRepository.findById(login).get().getPassword().equals(hashPassword)) {
             return Response.status(OK).build();
         }
-        return Response.status(UNAUTHORIZED).build();
+        return Response.status(401).build();
     }
 }
