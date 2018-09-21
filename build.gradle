@@ -18,7 +18,6 @@ dependencies {
 task stopContainers(type: Exec){
     println 'stop containers'
     commandLine 'sh', '-c', 'docker stop $(docker ps -q)'
-
 }
 
 task removeContainers(type: Exec, dependsOn: stopContainers){

@@ -9,6 +9,7 @@ import {HeaderInterceptor} from './interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { EspaceclientComponent } from './espaceclient/espaceclient/espaceclient.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { HeaderComponent } from './header/header.component';
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     AuthenticationComponent,
     EspaceclientComponent,
-    SafePipe
+    SafePipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
