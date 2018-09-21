@@ -7,8 +7,20 @@ import {Movie} from '../../models/movie';
   styleUrls: ['./espaceclient.component.css']
 })
 export class EspaceclientComponent implements OnInit {
+
+  public selectedMovie: string;
+
+
+  constructor() {
+    this.selectedMovie = 'https://www.youtube.com/embed/otMtaSKVU6s';
+  }
+
   ngOnInit(): void {
-    throw new Error("Method not implemented.");
+
+  }
+
+  changeSelectedVideo(): void {
+    console.log("selected video change");
   }
 
 
