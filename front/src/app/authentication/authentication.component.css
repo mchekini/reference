@@ -1,28 +1,117 @@
-#login .container #login-row #login-column #login-box {
-    margin-top: 120px;
-    max-width: 600px;
-    height: 320px;
-    border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
-}
-#login .container #login-row #login-column #login-box #login-form {
-    padding: 20px;
-}
-#login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
-}
-
-#connexion_btn{
-    position: relative;
-    left: 40%;
+.login_container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: rgba(0, 0, 0, .8);
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, .5) ;
+  border-radius: 5%;
 }
 
-
-.errorMessage{
-    color: red;
-    position: relative;
-    left:14%;
+.login_container h2{
+  padding: 0px;
+  margin: 0 0 30px;
+  color: white;
+  text-align: center;
 }
+
+.login_container .inputlogin{
+  position: relative;
+}
+
+
+.login_container .inputlogin input{
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 10px;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid white;
+}
+
+
+.login_container .inputlogin label{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  transition: .8s;
+}
+
+
+
+.login_container .inputlogin input:focus ~ label,
+.login_container .inputlogin input:valid ~ label
+{
+  top: -21px;
+  left: 0px;
+  color: #e14eca;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#login .container #login-row #login-column #login-box {*/
+    /*margin-top: 120px;*/
+    /*max-width: 600px;*/
+    /*height: 320px;*/
+    /*border: 1px solid #9C9C9C;*/
+    /*background-color: #EAEAEA;*/
+/*}*/
+/*#login .container #login-row #login-column #login-box #login-form {*/
+    /*padding: 20px;*/
+/*}*/
+/*#login .container #login-row #login-column #login-box #login-form #register-link {*/
+    /*margin-top: -85px;*/
+/*}*/
+
+/*#connexion_btn{*/
+    /*position: relative;*/
+    /*left: 40%;*/
+/*}*/
+
+
+/*.errorMessage{*/
+    /*color: red;*/
+    /*position: relative;*/
+    /*left:14%;*/
+/*}*/
 
 
 
