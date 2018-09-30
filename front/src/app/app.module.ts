@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   {path: 'inscription', component: InscriptionComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'dashboard/create', component: DashboardComponent},
-  {path: 'dashboard/update', component: DashboardComponent}
+  {path: 'dashboard/update', component: DashboardComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     CommentsComponent,
     InscriptionComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

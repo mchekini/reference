@@ -1,0 +1,49 @@
+.container{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba( 0, 0, 0, .8);
+  width: 40%;
+  padding: 5%;
+  border-radius: 5%;
+}
+
+.container .input-register{
+  position: relative;
+  margin-top: 7%;
+}
+
+.container .input-register input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding-left: 2%;
+  border-bottom: 1px solid white;
+}
+
+.container .input-register input:focus ~ label,
+.container .input-register input:valid ~ label
+{
+  top: -21px;
+  left: 0px;
+  color: #e14eca;;
+  font-size: 12px;
+}
+
+.container .input-register label{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  transition: 1s;
+  pointer-events: none;
+}
+
+.container  h2{
+  text-align: center;
+  color: white;
+  margin-bottom: 10%;
+}
