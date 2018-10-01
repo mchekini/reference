@@ -1,0 +1,12 @@
+minikuber version
+
+
+---   start a cluster  -----
+minikube start
+
+
+---- show cluster nodes ----
+
+kubectl get nodes
+
+
