@@ -12,7 +12,7 @@ import org.springframework.web.filter.CorsFilter;
 
 
 
-//@Configuration
+@Configuration
 public class CrossOriginConfiguration {
 
     @Bean
